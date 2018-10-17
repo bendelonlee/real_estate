@@ -5,5 +5,7 @@ class Room
     @width = width
     @length = length
   end
-  def
+  def area
+    @width * @length
+  end
 end
