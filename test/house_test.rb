@@ -14,7 +14,7 @@ class HouseTest < Minitest::Test
   end
   def test_house_starts_with_no_rooms
     house = House.new("$400000", "123 sugar lane")
-    house.rooms = []
+    assert_equal [], house.rooms
   end
   def test_house_can_have_rooms_added
     house = House.new("$400000", "123 sugar lane")
