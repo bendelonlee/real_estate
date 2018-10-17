@@ -55,12 +55,14 @@ class HouseTest < Minitest::Test
   end
 
   def test_rooms_sorted_by_area
-    expected = [room_1, room_2, room_3, room_4]
+    help_setup_large_house
+    expected = [@room_1, @room_2, @room_3, @room_4]
     assert_equal expected, @house.rooms_sorted_by_area
   end
 
   def test_rooms_by_category
-    expected = {bedroom: [room_1, room_2], living_room: [room_3], basement: [room_4]}
+    help_setup_large_house
+    expected = {bedroom: [@room_1, @room_2], living_room: [@room_3], basement: [@room_4]}
     assert_equal expected, @house.rooms_by_category
   end
 
