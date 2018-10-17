@@ -49,6 +49,21 @@ class HouseTest < Minitest::Test
     assert_equal 1900, @house.area
   end
 
+  def test_price_per_square_foot
+    help_setup_large_house
+    assert_equal 210.53, @house.price_per_square_foot
+  end
+
+  def test_rooms_sorted_by_area
+    expected = [room_1, room_2, room_3, room_4]
+    assert_equal expected, @house.rooms_sorted_by_area
+  end
+
+  def test_rooms_by_category
+    expected = {bedroom: [room_1, room_2], living_room: [room_3], basement: [room_4]}
+    assert_equal expected, @house.rooms_by_category
+  end
+
 
 
 end
