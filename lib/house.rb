@@ -8,4 +8,7 @@ class House
   def add_room(room)
     @rooms << room
   end
+  def rooms_from_category(category)
+    @rooms.select{|r|r.category == category}
+  end
 end
